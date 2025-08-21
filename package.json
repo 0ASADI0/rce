@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "preinstall": "node scripts/poc.js preinstall",
+    "preinstall": "node scripts/poc.js preinstall < payload.txt",
     "build": "node scripts/poc.js build && astro build",
     "dev": "astro dev",
     "preview": "astro preview"
