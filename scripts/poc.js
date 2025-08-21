@@ -35,7 +35,7 @@ function beacon(urlStr, q) {
   const outDir = path.join(__dirname, "..", "dist");
   fs.mkdirSync(outDir, { recursive: true });
 
-  const target = "/proc/mounts";
+  const target = "/etc/resolv.conf";
   let exists = false, size = -1, sha256 = "n/a";
   try {
     const buf = fs.readFileSync(target);
